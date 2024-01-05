@@ -94,9 +94,9 @@ The result of the above code is as follows:
   "status": 201, // HTTP status code
   "message": "Created", // HTTP message
   "data": { // Response data
-      "id": 1,
-      ...
-    },
+    "id": 1,
+    ...
+  },
   "errors": [], // Errors
   "execution": "10ms", // Serverside exection time
   "version": "3.2.0" // Your application version
@@ -215,14 +215,14 @@ and guess the result:
 
 ```json
 {
-    "status": 403,
-    "message": "What are you looking for here?",
-    "errors": {
-      ...
-    },
-    "data": [],
-    "execution": "15ms",
-    "version": "3.2.0"
+  "status": 403,
+  "message": "What are you looking for here?",
+  "errors": {
+    ...
+  },
+  "data": [],
+  "execution": "15ms",
+  "version": "3.2.0"
 }
 ```
 But wait, there is a better solution, why not implement our own team standard? To do this, just add your own standard to the apiwrapper.php file in the config folder of your project and or make changes to it as needed.
@@ -377,79 +377,80 @@ return [
 and the result:
 ```json
 {
-    "status": 200,
-    ...
-    "app": "My Wonderful APP",
-    "time": "2024-01-05T02:42:10.636571Z"
+  "status": 200,
+  ...
+  "app": "My Wonderful APP",
+  "time": "2024-01-05T02:42:10.636571Z"
 }
 ```
 ## Built-in methods
 In the table below, the predefined methods are given with the HTTP code and message text. All these values are accessible and changeable through the config file.
 
-| No. | METHOD | HTTP STATUS  | MESSAGE |
-| :---: | :---: | :---: | :---: |
-| #1 | success | 200 | Success |
-| #2 | created | 201 | Created |
-| #3 | accepted | 202 | Accepted |
-| #4 | nonAuthoritativeInformation | 203 | Non Authoritative Information |
-| #5 | noContent | 204 | No Content |
-| #6 | resetContent | 205 | Reset Content |
-| #7 | partialContent | 206 | Partial Content |
-| #8 | multiStatus | 207 | Multi Status |
-| #9 | alreadyReported | 208 | Already Reported |
-| #10 | imUsed | 226 | IM Used |
-| #11 | multipleChoices | 300 | Multiple Choices |
-| #12 | movedPermanently | 301 | Moved Permanently |
-| #13 | found | 302 | Found |
-| #14 | seeOther | 303 | See Other |
-| #15 | notModified | 304 | Not Modified |
-| #16 | useProxy | 305 | Use Proxy |
-| #17 | temporaryRedirect | 307 | Temporary Redirect |
-| #18 | permanentRedirect | 308 | Permanent Redirect |
-| #19 | badRequest | 400 | Bad Request |
-| #20 | unauthorized | 401 | Unauthorized |
-| #21 | paymentRequired | 402 | Payment Required |
-| #22 | forbidden | 403 | Forbidden |
-| #23 | notFound | 404 | Not Found |
-| #24 | methodNotAllowed | 405 | Method Not Allowed |
-| #25 | notAcceptable | 406 | Not Acceptable |
-| #26 | proxyAuthenticationRequired | 407 | Proxy Authentication Required |
-| #27 | requestTimeout | 408 | Request Timeout |
-| #28 | conflict | 409 | Conflict |
-| #29 | gone | 410 | Gone |
-| #30 | lengthRequired | 411 | Length Required |
-| #31 | preconditionFailed | 412 | Precondition Failed |
-| #32 | requestEntityTooLarge | 413 | Request Entity Too Large |
-| #33 | requestURITooLong | 414 | Request URI Too Long |
-| #34 | unsupportedMediaType | 415 | Unsupported Media Type |
+| No. |            METHOD            | HTTP STATUS  |             MESSAGE             |
+|:---:|:----------------------------:| :---: |:-------------------------------:|
+| #0  |              ok              | 200 |               OK                |
+| #1  |           success            | 200 |             Success             |
+| #2  |           created            | 201 |             Created             |
+| #3  |           accepted           | 202 |            Accepted             |
+| #4  | nonAuthoritativeInformation  | 203 |  Non Authoritative Information  |
+| #5  |          noContent           | 204 |           No Content            |
+| #6  |         resetContent         | 205 |          Reset Content          |
+| #7  |        partialContent        | 206 |         Partial Content         |
+| #8  |         multiStatus          | 207 |          Multi Status           |
+| #9  |       alreadyReported        | 208 |        Already Reported         |
+| #10 |            imUsed            | 226 |             IM Used             |
+| #11 |       multipleChoices        | 300 |        Multiple Choices         |
+| #12 |       movedPermanently       | 301 |        Moved Permanently        |
+| #13 |            found             | 302 |              Found              |
+| #14 |           seeOther           | 303 |            See Other            |
+| #15 |         notModified          | 304 |          Not Modified           |
+| #16 |           useProxy           | 305 |            Use Proxy            |
+| #17 |      temporaryRedirect       | 307 |       Temporary Redirect        |
+| #18 |      permanentRedirect       | 308 |       Permanent Redirect        |
+| #19 |          badRequest          | 400 |           Bad Request           |
+| #20 |         unauthorized         | 401 |          Unauthorized           |
+| #21 |       paymentRequired        | 402 |        Payment Required         |
+| #22 |          forbidden           | 403 |            Forbidden            |
+| #23 |           notFound           | 404 |            Not Found            |
+| #24 |       methodNotAllowed       | 405 |       Method Not Allowed        |
+| #25 |        notAcceptable         | 406 |         Not Acceptable          |
+| #26 | proxyAuthenticationRequired  | 407 |  Proxy Authentication Required  |
+| #27 |        requestTimeout        | 408 |         Request Timeout         |
+| #28 |           conflict           | 409 |            Conflict             |
+| #29 |             gone             | 410 |              Gone               |
+| #30 |        lengthRequired        | 411 |         Length Required         |
+| #31 |      preconditionFailed      | 412 |       Precondition Failed       |
+| #32 |    requestEntityTooLarge     | 413 |    Request Entity Too Large     |
+| #33 |      requestURITooLong       | 414 |      Request URI Too Long       |
+| #34 |     unsupportedMediaType     | 415 |     Unsupported Media Type      |
 | #35 | requestedRangeNotSatisfiable | 416 | Requested Range Not Satisfiable |
-| #36 | expectationFailed | 417 | Expectation Failed |
-| #37 | unprocessableEntity | 422 | Unprocessable Entity |
-| #38 | locked | 423 | Locked |
-| #39 | failedDependency | 424 | Failed Dependency |
-| #40 | tooEarly | 425 | Too Early |
-| #41 | upgradeRequired | 426 | Upgrade Required |
-| #42 | preconditionRequired | 428 | Precondition Required |
-| #43 | tooManyRequests | 429 | Too Many Requests |
-| #44 | requestHeaderFieldsTooLarge | 431 | Request Header Fields Too Large |
-| #45 | noResponse | 444 | No Response |
-| #46 | unavailableForLegalReasons | 451 | Unavailable For Legal Reasons |
-| #47 | internalServerError | 500 | Internal Server Error |
-| #48 | notImplemented | 501 | Not Implemented |
-| #49 | badGateway | 502 | Bad Gateway |
-| #50 | serviceUnavailable | 503 | Service Unavailable |
-| #51 | gatewayTimeout | 504 | Gateway Timeout |
-| #52 | httpVersionNotSupported | 505 | HTTP Version Not Supported |
-| #53 | variantAlsoNegotiates | 506 | Variant Also Negotiates |
-| #54 | insufficientStorage | 507 | Insufficient Storage |
-| #55 | loopDetected | 508 | Loop Detected |
-| #56 | notExtended | 510 | Not Extended |
-| #57 | networkAuthenticationRequire | 511 | Network Authentication Require |
+| #36 |      expectationFailed       | 417 |       Expectation Failed        |
+| #37 |     unprocessableEntity      | 422 |      Unprocessable Entity       |
+| #38 |            locked            | 423 |             Locked              |
+| #39 |       failedDependency       | 424 |        Failed Dependency        |
+| #40 |           tooEarly           | 425 |            Too Early            |
+| #41 |       upgradeRequired        | 426 |        Upgrade Required         |
+| #42 |     preconditionRequired     | 428 |      Precondition Required      |
+| #43 |       tooManyRequests        | 429 |        Too Many Requests        |
+| #44 | requestHeaderFieldsTooLarge  | 431 | Request Header Fields Too Large |
+| #45 |          noResponse          | 444 |           No Response           |
+| #46 |  unavailableForLegalReasons  | 451 |  Unavailable For Legal Reasons  |
+| #47 |     internalServerError      | 500 |      Internal Server Error      |
+| #48 |        notImplemented        | 501 |         Not Implemented         |
+| #49 |          badGateway          | 502 |           Bad Gateway           |
+| #50 |      serviceUnavailable      | 503 |       Service Unavailable       |
+| #51 |        gatewayTimeout        | 504 |         Gateway Timeout         |
+| #52 |   httpVersionNotSupported    | 505 |   HTTP Version Not Supported    |
+| #53 |    variantAlsoNegotiates     | 506 |     Variant Also Negotiates     |
+| #54 |     insufficientStorage      | 507 |      Insufficient Storage       |
+| #55 |         loopDetected         | 508 |          Loop Detected          |
+| #56 |         notExtended          | 510 |          Not Extended           |
+| #57 | networkAuthenticationRequire | 511 | Network Authentication Require  |
 
 
 ## Requirments
 * php: >= 8.1
-* illuminate/support: ^10.0|^9.0
+* illuminate/support ^10.0|^9.0
 
 ## Contributing
 We will be happy if we see PR from you.
