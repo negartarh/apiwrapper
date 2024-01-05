@@ -44,8 +44,8 @@ public function index():\Illuminate\Http\Response
 {
     $users = User::latest()->take(10)->get();
     
-    # Alias of
-    # return apiwrapper()->ok($users);
+    return apiwrapper()->ok($users);
+    # or
     return api_response()->ok($users);
 }
 ```
@@ -290,7 +290,7 @@ public function login(Request $request):\Illuminate\Http\Response
                   ->first();
                   
     if($user == null):
-        return APIResponse::accessDenied($user);
+        return APIResponse::accessDenied();
     else:
         ...
 }
@@ -428,6 +428,7 @@ and the result:
   "time": "2024-01-05T02:42:10.636571Z"
 }
 ```
+
 ## Built-in methods
 In the table below, the predefined methods are given with the HTTP code and message text. All these values are accessible and changeable through the config file.
 
