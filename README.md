@@ -1,7 +1,7 @@
 # Laravel Missed API Response Wrapper
 
-### Super fast, lightweight, standard and high customizable wrapper for Laravel API responses
-Laravel Missed API Response Wrapper is a high-quality package that simplifies the creation and management of Laravel API responses. It is very fast, lightweight, and highly customizable. It allows you to easily classify all your API responses, such as those from validators, controllers, and others, with features like status, message, errors, and execution time, all done automatically. In addition, you can also add your own custom values to it, as easily as possible.
+### Super fast, lightweight, standard, octane friendly, and high customizable wrapper for Laravel API responses
+Laravel Missed API Response Wrapper is a high-quality package that simplifies the creation and management of Laravel API responses. It is very fast, lightweight, octane-friendly and highly customizable. It allows you to easily classify all your API responses, such as those from validators, controllers, and others, with features like status, message, errors, and execution time, all done automatically. In addition, you can also add your own custom values to it, as easily as possible.
 ## Installation
 To install Laravel Missed API Response Wrapper, just run the following command:
 ```bash
@@ -102,7 +102,39 @@ The result of the above code is as follows:
   "version": "3.2.0" // Your application version
 }
 ```
-#### Example 2. Validating data
+#### Example 2. No content
+```php
+use Illuminate\Support\Facades\Request;
+use Negartarh\APIWrapper\Facades\APIResponse;
+
+...
+
+public function index(Request $request):\Illuminate\Http\Response
+{
+    $posts = Post::all();
+    
+    if(!is_countable($posts) or count($posts) == 0):
+                 
+        return APIResponse::noContent();
+        
+    else:
+        ...
+}
+
+```
+The result of the above code is as follows:
+
+```json
+{
+  "status": 204, // HTTP status code
+  "message": "No Content", // HTTP message
+  "data": [],
+  "errors": [],
+  "execution": "10ms",
+  "version": "3.2.0"
+}
+```
+#### Example 3. Validating data
 ```php
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Negartarh\APIWrapper\Facades\APIResponse;
@@ -176,9 +208,9 @@ and the result is:
 {
   "status": 413,
   "message": "Request Entity Too Large",
-  "errors": {
+  "errors": [
     ...
-  },
+  ],
   "data": [],
   "execution": "17ms",
   "version": "3.2.0"
@@ -226,6 +258,9 @@ and guess the result:
 }
 ```
 But wait, there is a better solution, why not implement our own team standard? To do this, just add your own standard to the apiwrapper.php file in the config folder of your project and or make changes to it as needed.
+
+### Customized methods
+#### Example 1.
 ```php
 # path/to/project/configuration/dir/apiwrapper.php
 
