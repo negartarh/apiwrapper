@@ -454,7 +454,7 @@ use Negartarh\APIWrapper\Facades\APIResponse;
 
     public function failedValidation(Validator $validator): HttpResponseException
     {
-        APIResponse::unprocessableEntity($validator->errors());
+        return APIResponse::unprocessableEntity($validator->errors());
     }
 ```
 ###### Front-End:
