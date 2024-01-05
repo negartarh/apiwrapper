@@ -20,7 +20,7 @@ class APIResponseServiceProvider extends ServiceProvider
 
         require_once __DIR__ . '/Helpers/functions.php';
 
-        $this->loadTranslationsFrom(__DIR__ . '/Resources/languages', 'apiwrapper');
+        $this->loadJsonTranslationsFrom(__DIR__ . '/Resources/languages');
 
         $this->publishes([
             __DIR__ . '/Config/apiwrapper.php' => config_path('apiwrapper.php'),
