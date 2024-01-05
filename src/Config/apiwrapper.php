@@ -17,7 +17,7 @@ return [
      * The fields array defines which fields should be included or excluded in the API responses
      *
      * - Each field is a string that represents the name of the field
-     * - Each value is a boolean that indicates whether the field should be included (true) or excluded (false)
+     * - Each value is a boolean or callable that indicates whether the field should be included (true), excluded (false) or call function
      */
     'fields' => [
 
@@ -48,7 +48,7 @@ return [
          *
          * - If set to true, the execution time will be included in the API responses.
          * - If set to false, the execution time will not be included in the API responses.
-         * - If set to callable function, return of function will bew include in the API responses as execution.
+         * - If set to callable function, return of function will be included in the API responses as execution.
          */
         'execution' => true,
 
