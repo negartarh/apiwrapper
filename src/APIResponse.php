@@ -58,7 +58,7 @@ class APIResponse
     {
         $statusKey = (string)Config::get('apiwrapper.replaces.status') ?: 'status';
         $messageKey = (string)Config::get('apiwrapper.replaces.message') ?: 'message';
-        $contentsKey = (string)Config::get('apiwrapper.replaces.contents') ?: 'contents';
+        $dataKey = (string)Config::get('apiwrapper.replaces.data') ?: 'data';
         $errorsKey = (string)Config::get('apiwrapper.replaces.errors') ?: 'errors';
         $executionKey = (string)Config::get('apiwrapper.replaces.execution') ?: 'execution';
         $versionKey = (string)Config::get('apiwrapper.replaces.version') ?: 'version';
@@ -69,14 +69,14 @@ class APIResponse
         ];
 
         if ($status >= 200 && $status < 400):
-            $wrapped[$contentsKey] = $content;
+            $wrapped[$dataKey] = $content;
             if (Config::get('apiwrapper.fields.errors')):
                 $wrapped[$errorsKey] = [];
             endif;
         else:
             $wrapped[$errorsKey] = $content;
-            if (Config::get('apiwrapper.fields.contents')):
-                $wrapped[$contentsKey] = [];
+            if (Config::get('apiwrapper.fields.data')):
+                $wrapped[$dataKey] = [];
             endif;
         endif;
 

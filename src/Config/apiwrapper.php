@@ -22,14 +22,14 @@ return [
     'fields' => [
 
         /**
-         * Configuration key: fields.contents
+         * Configuration key: fields.data
          *
-         * Determines whether to include the contents filed in failed API responses.
+         * Determines whether to include the data filed in failed API responses.
          *
-         * - If set to true, the contents field will always be included in the API responses.
-         * - If set to false, the contents field will be included in the success API responses.
+         * - If set to true, the data field will always be included in the API responses.
+         * - If set to false, the data field will be included in the success API responses.
          */
-        'contents' => true,
+        'data' => true,
 
         /**
          * Configuration key: fields.errors
@@ -90,11 +90,11 @@ return [
         'message' => 'message',
 
         /**
-         * Configuration key: replaces.contents
+         * Configuration key: replaces.data
          *
          * Wrapper key of data in success API responses.
          */
-        'contents' => 'contents',
+        'data' => 'data',
 
         /**
          * Configuration key: replaces.errors

@@ -55,7 +55,7 @@ The result of the above codes is as follows:
 {
   "status": 200, // HTTP status code
   "message": "OK", // HTTP message
-  "contents": [ // Response data
+  "data": [ // Response data
     {
       "id": 1,
       ...
@@ -93,7 +93,7 @@ The result of the above code is as follows:
 {
   "status": 201, // HTTP status code
   "message": "Created", // HTTP message
-  "contents": { // Response data
+  "data": { // Response data
       "id": 1,
       ...
     },
@@ -136,7 +136,7 @@ The result of the above code is as follows:
       "The CAPTCHA has expired."
     ]
   },
-  "contents": [],
+  "data": [],
   "execution": "41ms",
   "version": "3.2.0"
 }
@@ -179,7 +179,7 @@ and the result is:
   "errors": {
     ...
   },
-  "contents": [],
+  "data": [],
   "execution": "17ms",
   "version": "3.2.0"
 }
@@ -220,7 +220,7 @@ and guess the result:
     "errors": {
       ...
     },
-    "contents": [],
+    "data": [],
     "execution": "15ms",
     "version": "3.2.0"
 }
@@ -342,14 +342,14 @@ return [
     ...
     'replaces' => [
         ...
-        'contents' => 'data',
+        'data' => 'content',
 ```
 result:
 ```json
 {
   "status": 200,
   "message": "OK",
-  "data": [ // changed from contents to data
+  "content": [ // changed from data to content
     {
       "id": 1,
       ...
