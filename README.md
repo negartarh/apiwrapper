@@ -329,7 +329,7 @@ If your API is multilingual, this package is translatable and has been translate
 use Negartarh\APIWrapper\Facades\APIResponse;
 
 ...
-App::setLocale('fa')
+App::setLocale('fa');
 ...
 
 return APIResponse::insufficientStorage();
@@ -352,8 +352,8 @@ return [
     ...
     'localization' => false,
 ```
-## Customizing response values
-To enable or disable the keys in the response, just do it through the configuration file.
+## Customizing responses
+To enable, disable or customize default keys in the response, just do it through the configuration file.
 #### Example 1. Disabling default keys
 ```php
 # path/to/project/configuration/dir/apiwrapper.php
@@ -363,6 +363,16 @@ return [
     'fields' => [
         ...
         'execution' => false,
+```
+#### Example 2. change the algorithm
+```php
+# path/to/project/configuration/dir/apiwrapper.php
+
+return [
+    ...
+    'fields' => [
+        ...
+        'version' => fn(mixed $content, int $status, string $message) => env('API_VERSION', 'x.x.x'),
 ```
 You can get more information on this by studying the configuration file.
 
@@ -407,7 +417,7 @@ return [
     ...
     'custom_keys'=>[
         'app'=> 'My Wonderful APP',
-        'time'=> fn(mixed $content = '', int $status = 200, string $message = '') => \Illuminate\Support\Carbon::now(),
+        'time'=> fn(mixed $content, int $status, string $message) => \Illuminate\Support\Carbon::now(),
 ```
 and the result:
 ```json
