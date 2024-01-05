@@ -48,6 +48,7 @@ return [
          *
          * - If set to true, the execution time will be included in the API responses.
          * - If set to false, the execution time will not be included in the API responses.
+         * - If set to callable function, return of function will bew include in the API responses as execution.
          */
         'execution' => true,
 
@@ -58,6 +59,7 @@ return [
          *
          * - If set to true, the app version be included in the API responses.
          * - If set to false, the app version will not be included in the API responses.
+         * - If set to callable function, return of function will bew include in the API responses as execution.
          */
         'version' => true,
 
