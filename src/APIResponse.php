@@ -6,6 +6,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
+use function request;
 
 class APIResponse
 {
@@ -53,6 +54,21 @@ class APIResponse
 
     }
 
+    public function make(int $status = 200, mixed $content = '', string $message = '', array $headers = []): \Illuminate\Http\Response
+    {
+        $response = Response::make(
+            $this->wrap($content, $status, $message),
+            $status,
+            array_merge([
+                'X-WRAPPED-BY' => sprintf('%s/%s', basename(self::class), self::version),
+            ], $headers));
+
+        if ($status >= 200 && $status < 400):
+            return $response;
+        else:
+            return throw new HttpResponseException($response);
+        endif;
+    }
 
     public function wrap(mixed $content = '', int $status = 200, string $message = ''): array
     {
@@ -89,7 +105,7 @@ class APIResponse
             ]);
 
         elseif ($customExecution):
-            $wrapped[$executionKey] = microtime(true) - ((float)defined('LARAVEL_START') ? LARAVEL_START : \request()->server('REQUEST_TIME_FLOAT'));
+            $wrapped[$executionKey] = microtime(true) - ((float)defined('LARAVEL_START') ? LARAVEL_START : request()->server('REQUEST_TIME_FLOAT'));
             $wrapped[$executionKey] = sprintf('%dms', round($wrapped[$executionKey] * 1000));
         endif;
 
@@ -140,24 +156,6 @@ class APIResponse
 
         trigger_error(sprintf('Call to undefined HTTP status [%d]. make sure status code exists in Negartarh\APIWrapper\APIResponse configuration file.', $status), E_USER_ERROR);
 
-    }
-
-    public function make(int $status = 200, mixed $content = '', string $message = '', array $headers = []): \Illuminate\Http\Response
-    {
-        $content = $this->wrap($content, $status, $message);
-
-        $response = Response::make(
-            $content,
-            $status,
-            array_merge([
-                'X-WRAPPED-BY' => sprintf('%s/%s', basename(self::class), self::version),
-            ], $headers));
-
-        if ($status >= 200 && $status < 400):
-            return $response;
-        else:
-            return throw new HttpResponseException($response);
-        endif;
     }
 
 }

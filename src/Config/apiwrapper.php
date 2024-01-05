@@ -130,7 +130,7 @@ return [
      * - The value of each item can be callable function or any type of php variables.
      * - if value is callable, mixed $content, int $status, string $message arguments will be pass to it.
      */
-    'custom_keys'=>[
+    'custom_keys' => [
 
     ],
 
