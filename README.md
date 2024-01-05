@@ -429,6 +429,59 @@ and the result:
 }
 ```
 
+## Hints
+#### Example 1. Real-World software development with axios
+###### Back-End:
+```php
+# API Login Controller
+use Negartarh\APIWrapper\Facades\APIResponse;
+
+...
+
+    public function login(LoginRequest $request):\Illuminate\Http\Response
+    {
+        ...
+        
+        return APIResponse::ok([
+                ...
+            ]);
+    }
+
+# API LoginRequest Form Request
+use Negartarh\APIWrapper\Facades\APIResponse;
+
+...
+
+    public function failedValidation(Validator $validator): HttpResponseException
+    {
+        APIResponse::unprocessableEntity($validator->errors());
+    }
+```
+###### Front-End:
+```js
+let isOnRequest = false;
+
+...
+
+async function submitForm() {
+
+    isOnRequest = true;
+
+    await axios.post('api/login', {
+        ...
+    })
+    .then((response) => {
+        // if validation passed, you can get response here
+        console.log(response.data)
+    }).catch((error)=>{
+        // if validation failed, you can catch errors here
+        console.log(error.response.data)
+    }).finally(()=>{
+        isOnRequest = false;
+    });
+}
+```
+
 ## Built-in methods
 In the table below, the predefined methods are given with the HTTP code and message text. All these values are accessible and changeable through the config file.
 
