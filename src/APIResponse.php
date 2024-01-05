@@ -80,12 +80,26 @@ class APIResponse
             endif;
         endif;
 
-        if (Config::get('apiwrapper.fields.execution')):
+        if (is_callable($customExecution = Config::get('apiwrapper.fields.execution'))):
+
+            $wrapped[$executionKey] = call_user_func_array($customExecution, [
+                'content' => $content,
+                'status' => $status,
+                'message' => $message
+            ]);
+
+        elseif ($customExecution):
             $wrapped[$executionKey] = microtime(true) - ((float)defined('LARAVEL_START') ? LARAVEL_START : \request()->server('REQUEST_TIME_FLOAT'));
             $wrapped[$executionKey] = sprintf('%dms', round($wrapped[$executionKey] * 1000));
         endif;
 
-        if (Config::get('apiwrapper.fields.version')):
+        if (is_callable($customVersion = Config::get('apiwrapper.fields.version'))):
+            $wrapped[$versionKey] = call_user_func_array($customVersion, [
+                'content' => $content,
+                'status' => $status,
+                'message' => $message
+            ]);
+        elseif ($customVersion):
             $wrapped[$versionKey] = Env::get('APP_VERSION');
         endif;
 
