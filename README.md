@@ -502,4 +502,4 @@ In the table below, the predefined methods are given with the HTTP code and mess
 We will be happy if we see PR from you.
 
 ## License
-The API Response is a free package released under the MIT License.
+This is a free package released under the MIT License.
