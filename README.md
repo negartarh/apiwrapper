@@ -449,7 +449,7 @@ In the table below, the predefined methods are given with the HTTP code and mess
 
 ## Requirments
 * php: >= 8.1
-* illuminate/support ^10.0|^9.0
+* illuminate/support: ^10.0|^9.0
 
 ## Contributing
 We will be happy if we see PR from you.
