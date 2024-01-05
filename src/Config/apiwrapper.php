@@ -154,7 +154,7 @@ return [
          */
         'success' => [
             'code' => 200,
-            'message' => 'OK',
+            'message' => 'Success',
         ],
 
         'created' => [
