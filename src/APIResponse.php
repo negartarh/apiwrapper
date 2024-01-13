@@ -131,6 +131,10 @@ class APIResponse
                 else:
                     $wrapped[$key] = $value;
                 endif;
+
+                if($wrapped[$key] === false):
+                    unset($wrapped[$key]);
+                endif;
             endforeach;
 
         endif;
