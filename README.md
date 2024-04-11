@@ -540,371 +540,68 @@ class Handler extends ExceptionHandler
 
 ## Built-in methods
 In the table below, the predefined methods are given with the HTTP code and message text. All these values are accessible and changeable through the config file.
-<style>
-    table {
-        width: 100%;
-    }
-</style>
-<table>
-<thead>
-<tr>
-<th align="center">No.</th>
-<th align="center">METHOD</th>
-<th align="center">HTTP STATUS</th>
-<th align="center">MESSAGE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">#0</td>
-<td align="center">ok</td>
-<td align="center">200</td>
-<td align="center">OK</td>
-</tr>
-<tr>
-<td align="center">#1</td>
-<td align="center">success</td>
-<td align="center">200</td>
-<td align="center">Success</td>
-</tr>
-<tr>
-<td align="center">#2</td>
-<td align="center">created</td>
-<td align="center">201</td>
-<td align="center">Created</td>
-</tr>
-<tr>
-<td align="center">#3</td>
-<td align="center">accepted</td>
-<td align="center">202</td>
-<td align="center">Accepted</td>
-</tr>
-<tr>
-<td align="center">#4</td>
-<td align="center">nonAuthoritativeInformation</td>
-<td align="center">203</td>
-<td align="center">Non Authoritative Information</td>
-</tr>
-<tr>
-<td align="center">#5</td>
-<td align="center">noContent</td>
-<td align="center">204</td>
-<td align="center">No Content</td>
-</tr>
-<tr>
-<td align="center">#6</td>
-<td align="center">resetContent</td>
-<td align="center">205</td>
-<td align="center">Reset Content</td>
-</tr>
-<tr>
-<td align="center">#7</td>
-<td align="center">partialContent</td>
-<td align="center">206</td>
-<td align="center">Partial Content</td>
-</tr>
-<tr>
-<td align="center">#8</td>
-<td align="center">multiStatus</td>
-<td align="center">207</td>
-<td align="center">Multi Status</td>
-</tr>
-<tr>
-<td align="center">#9</td>
-<td align="center">alreadyReported</td>
-<td align="center">208</td>
-<td align="center">Already Reported</td>
-</tr>
-<tr>
-<td align="center">#10</td>
-<td align="center">imUsed</td>
-<td align="center">226</td>
-<td align="center">IM Used</td>
-</tr>
-<tr>
-<td align="center">#11</td>
-<td align="center">multipleChoices</td>
-<td align="center">300</td>
-<td align="center">Multiple Choices</td>
-</tr>
-<tr>
-<td align="center">#12</td>
-<td align="center">movedPermanently</td>
-<td align="center">301</td>
-<td align="center">Moved Permanently</td>
-</tr>
-<tr>
-<td align="center">#13</td>
-<td align="center">found</td>
-<td align="center">302</td>
-<td align="center">Found</td>
-</tr>
-<tr>
-<td align="center">#14</td>
-<td align="center">seeOther</td>
-<td align="center">303</td>
-<td align="center">See Other</td>
-</tr>
-<tr>
-<td align="center">#15</td>
-<td align="center">notModified</td>
-<td align="center">304</td>
-<td align="center">Not Modified</td>
-</tr>
-<tr>
-<td align="center">#16</td>
-<td align="center">useProxy</td>
-<td align="center">305</td>
-<td align="center">Use Proxy</td>
-</tr>
-<tr>
-<td align="center">#17</td>
-<td align="center">temporaryRedirect</td>
-<td align="center">307</td>
-<td align="center">Temporary Redirect</td>
-</tr>
-<tr>
-<td align="center">#18</td>
-<td align="center">permanentRedirect</td>
-<td align="center">308</td>
-<td align="center">Permanent Redirect</td>
-</tr>
-<tr>
-<td align="center">#19</td>
-<td align="center">badRequest</td>
-<td align="center">400</td>
-<td align="center">Bad Request</td>
-</tr>
-<tr>
-<td align="center">#20</td>
-<td align="center">unauthorized</td>
-<td align="center">401</td>
-<td align="center">Unauthorized</td>
-</tr>
-<tr>
-<td align="center">#21</td>
-<td align="center">paymentRequired</td>
-<td align="center">402</td>
-<td align="center">Payment Required</td>
-</tr>
-<tr>
-<td align="center">#22</td>
-<td align="center">forbidden</td>
-<td align="center">403</td>
-<td align="center">Forbidden</td>
-</tr>
-<tr>
-<td align="center">#23</td>
-<td align="center">notFound</td>
-<td align="center">404</td>
-<td align="center">Not Found</td>
-</tr>
-<tr>
-<td align="center">#24</td>
-<td align="center">methodNotAllowed</td>
-<td align="center">405</td>
-<td align="center">Method Not Allowed</td>
-</tr>
-<tr>
-<td align="center">#25</td>
-<td align="center">notAcceptable</td>
-<td align="center">406</td>
-<td align="center">Not Acceptable</td>
-</tr>
-<tr>
-<td align="center">#26</td>
-<td align="center">proxyAuthenticationRequired</td>
-<td align="center">407</td>
-<td align="center">Proxy Authentication Required</td>
-</tr>
-<tr>
-<td align="center">#27</td>
-<td align="center">requestTimeout</td>
-<td align="center">408</td>
-<td align="center">Request Timeout</td>
-</tr>
-<tr>
-<td align="center">#28</td>
-<td align="center">conflict</td>
-<td align="center">409</td>
-<td align="center">Conflict</td>
-</tr>
-<tr>
-<td align="center">#29</td>
-<td align="center">gone</td>
-<td align="center">410</td>
-<td align="center">Gone</td>
-</tr>
-<tr>
-<td align="center">#30</td>
-<td align="center">lengthRequired</td>
-<td align="center">411</td>
-<td align="center">Length Required</td>
-</tr>
-<tr>
-<td align="center">#31</td>
-<td align="center">preconditionFailed</td>
-<td align="center">412</td>
-<td align="center">Precondition Failed</td>
-</tr>
-<tr>
-<td align="center">#32</td>
-<td align="center">requestEntityTooLarge</td>
-<td align="center">413</td>
-<td align="center">Request Entity Too Large</td>
-</tr>
-<tr>
-<td align="center">#33</td>
-<td align="center">requestURITooLong</td>
-<td align="center">414</td>
-<td align="center">Request URI Too Long</td>
-</tr>
-<tr>
-<td align="center">#34</td>
-<td align="center">unsupportedMediaType</td>
-<td align="center">415</td>
-<td align="center">Unsupported Media Type</td>
-</tr>
-<tr>
-<td align="center">#35</td>
-<td align="center">requestedRangeNotSatisfiable</td>
-<td align="center">416</td>
-<td align="center">Requested Range Not Satisfiable</td>
-</tr>
-<tr>
-<td align="center">#36</td>
-<td align="center">expectationFailed</td>
-<td align="center">417</td>
-<td align="center">Expectation Failed</td>
-</tr>
-<tr>
-<td align="center">#37</td>
-<td align="center">unprocessableEntity</td>
-<td align="center">422</td>
-<td align="center">Unprocessable Entity</td>
-</tr>
-<tr>
-<td align="center">#38</td>
-<td align="center">locked</td>
-<td align="center">423</td>
-<td align="center">Locked</td>
-</tr>
-<tr>
-<td align="center">#39</td>
-<td align="center">failedDependency</td>
-<td align="center">424</td>
-<td align="center">Failed Dependency</td>
-</tr>
-<tr>
-<td align="center">#40</td>
-<td align="center">tooEarly</td>
-<td align="center">425</td>
-<td align="center">Too Early</td>
-</tr>
-<tr>
-<td align="center">#41</td>
-<td align="center">upgradeRequired</td>
-<td align="center">426</td>
-<td align="center">Upgrade Required</td>
-</tr>
-<tr>
-<td align="center">#42</td>
-<td align="center">preconditionRequired</td>
-<td align="center">428</td>
-<td align="center">Precondition Required</td>
-</tr>
-<tr>
-<td align="center">#43</td>
-<td align="center">tooManyRequests</td>
-<td align="center">429</td>
-<td align="center">Too Many Requests</td>
-</tr>
-<tr>
-<td align="center">#44</td>
-<td align="center">requestHeaderFieldsTooLarge</td>
-<td align="center">431</td>
-<td align="center">Request Header Fields Too Large</td>
-</tr>
-<tr>
-<td align="center">#45</td>
-<td align="center">noResponse</td>
-<td align="center">444</td>
-<td align="center">No Response</td>
-</tr>
-<tr>
-<td align="center">#46</td>
-<td align="center">unavailableForLegalReasons</td>
-<td align="center">451</td>
-<td align="center">Unavailable For Legal Reasons</td>
-</tr>
-<tr>
-<td align="center">#47</td>
-<td align="center">internalServerError</td>
-<td align="center">500</td>
-<td align="center">Internal Server Error</td>
-</tr>
-<tr>
-<td align="center">#48</td>
-<td align="center">notImplemented</td>
-<td align="center">501</td>
-<td align="center">Not Implemented</td>
-</tr>
-<tr>
-<td align="center">#49</td>
-<td align="center">badGateway</td>
-<td align="center">502</td>
-<td align="center">Bad Gateway</td>
-</tr>
-<tr>
-<td align="center">#50</td>
-<td align="center">serviceUnavailable</td>
-<td align="center">503</td>
-<td align="center">Service Unavailable</td>
-</tr>
-<tr>
-<td align="center">#51</td>
-<td align="center">gatewayTimeout</td>
-<td align="center">504</td>
-<td align="center">Gateway Timeout</td>
-</tr>
-<tr>
-<td align="center">#52</td>
-<td align="center">httpVersionNotSupported</td>
-<td align="center">505</td>
-<td align="center">HTTP Version Not Supported</td>
-</tr>
-<tr>
-<td align="center">#53</td>
-<td align="center">variantAlsoNegotiates</td>
-<td align="center">506</td>
-<td align="center">Variant Also Negotiates</td>
-</tr>
-<tr>
-<td align="center">#54</td>
-<td align="center">insufficientStorage</td>
-<td align="center">507</td>
-<td align="center">Insufficient Storage</td>
-</tr>
-<tr>
-<td align="center">#55</td>
-<td align="center">loopDetected</td>
-<td align="center">508</td>
-<td align="center">Loop Detected</td>
-</tr>
-<tr>
-<td align="center">#56</td>
-<td align="center">notExtended</td>
-<td align="center">510</td>
-<td align="center">Not Extended</td>
-</tr>
-<tr>
-<td align="center">#57</td>
-<td align="center">networkAuthenticationRequire</td>
-<td align="center">511</td>
-<td align="center">Network Authentication Require</td>
-</tr>
-</tbody>
-</table>
+
+| No. |            METHOD            | HTTP STATUS  |             MESSAGE             |
+|:---:|:----------------------------:| :---: |:-------------------------------:|
+| #0  |              ok              | 200 |               OK                |
+| #1  |           success            | 200 |             Success             |
+| #2  |           created            | 201 |             Created             |
+| #3  |           accepted           | 202 |            Accepted             |
+| #4  | nonAuthoritativeInformation  | 203 |  Non Authoritative Information  |
+| #5  |          noContent           | 204 |           No Content            |
+| #6  |         resetContent         | 205 |          Reset Content          |
+| #7  |        partialContent        | 206 |         Partial Content         |
+| #8  |         multiStatus          | 207 |          Multi Status           |
+| #9  |       alreadyReported        | 208 |        Already Reported         |
+| #10 |            imUsed            | 226 |             IM Used             |
+| #11 |       multipleChoices        | 300 |        Multiple Choices         |
+| #12 |       movedPermanently       | 301 |        Moved Permanently        |
+| #13 |            found             | 302 |              Found              |
+| #14 |           seeOther           | 303 |            See Other            |
+| #15 |         notModified          | 304 |          Not Modified           |
+| #16 |           useProxy           | 305 |            Use Proxy            |
+| #17 |      temporaryRedirect       | 307 |       Temporary Redirect        |
+| #18 |      permanentRedirect       | 308 |       Permanent Redirect        |
+| #19 |          badRequest          | 400 |           Bad Request           |
+| #20 |         unauthorized         | 401 |          Unauthorized           |
+| #21 |       paymentRequired        | 402 |        Payment Required         |
+| #22 |          forbidden           | 403 |            Forbidden            |
+| #23 |           notFound           | 404 |            Not Found            |
+| #24 |       methodNotAllowed       | 405 |       Method Not Allowed        |
+| #25 |        notAcceptable         | 406 |         Not Acceptable          |
+| #26 | proxyAuthenticationRequired  | 407 |  Proxy Authentication Required  |
+| #27 |        requestTimeout        | 408 |         Request Timeout         |
+| #28 |           conflict           | 409 |            Conflict             |
+| #29 |             gone             | 410 |              Gone               |
+| #30 |        lengthRequired        | 411 |         Length Required         |
+| #31 |      preconditionFailed      | 412 |       Precondition Failed       |
+| #32 |    requestEntityTooLarge     | 413 |    Request Entity Too Large     |
+| #33 |      requestURITooLong       | 414 |      Request URI Too Long       |
+| #34 |     unsupportedMediaType     | 415 |     Unsupported Media Type      |
+| #35 | requestedRangeNotSatisfiable | 416 | Requested Range Not Satisfiable |
+| #36 |      expectationFailed       | 417 |       Expectation Failed        |
+| #37 |     unprocessableEntity      | 422 |      Unprocessable Entity       |
+| #38 |            locked            | 423 |             Locked              |
+| #39 |       failedDependency       | 424 |        Failed Dependency        |
+| #40 |           tooEarly           | 425 |            Too Early            |
+| #41 |       upgradeRequired        | 426 |        Upgrade Required         |
+| #42 |     preconditionRequired     | 428 |      Precondition Required      |
+| #43 |       tooManyRequests        | 429 |        Too Many Requests        |
+| #44 | requestHeaderFieldsTooLarge  | 431 | Request Header Fields Too Large |
+| #45 |          noResponse          | 444 |           No Response           |
+| #46 |  unavailableForLegalReasons  | 451 |  Unavailable For Legal Reasons  |
+| #47 |     internalServerError      | 500 |      Internal Server Error      |
+| #48 |        notImplemented        | 501 |         Not Implemented         |
+| #49 |          badGateway          | 502 |           Bad Gateway           |
+| #50 |      serviceUnavailable      | 503 |       Service Unavailable       |
+| #51 |        gatewayTimeout        | 504 |         Gateway Timeout         |
+| #52 |   httpVersionNotSupported    | 505 |   HTTP Version Not Supported    |
+| #53 |    variantAlsoNegotiates     | 506 |     Variant Also Negotiates     |
+| #54 |     insufficientStorage      | 507 |      Insufficient Storage       |
+| #55 |         loopDetected         | 508 |          Loop Detected          |
+| #56 |         notExtended          | 510 |          Not Extended           |
+| #57 | networkAuthenticationRequire | 511 | Network Authentication Require  |
+
 
 ## Requirments
 * php: >= 8.1
