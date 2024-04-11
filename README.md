@@ -1,9 +1,9 @@
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 # Laravel Missed API Response Wrapper ![GitHub Repo stars](https://img.shields.io/github/stars/negartarh/apiwrapper)
 
 </div>
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 ![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge)
 ![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge)
@@ -12,7 +12,7 @@
 
 </div>
 
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/negartarh/apiwrapper?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/negartarh/apiwrapper?style=for-the-badge)
