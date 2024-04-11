@@ -23,12 +23,17 @@
 
 <div align="center" style="text-align: center">
 
-### Super Fast | Lightweight | Standard | Octane Friendly | High Customizable
+### Super Fast | Lightweight | Standard | Octane Compatible | High Customizable
 
 </div>
-<div align="center" style="text-align: center">
-Laravel Missed API Response Wrapper is a high-quality package that simplifies the creation and management of Laravel API responses. It is very fast, lightweight, octane-friendly and highly customizable. It allows you to easily classify all your API responses, such as those from validators, controllers, and others, with features like status, message, errors, and execution time, all done automatically. In addition, you can also add your own custom values to it, as easily as possible.
-</div>
+
+## Introduction
+
+The Laravel Missed API Response Wrapper package is a high-quality and standard package that makes the process of creating and managing standard API responses in Laravel easy. This package is both fast and lightweight, and fully compatible with Laravel Octane, highly customizable, and automatically enables the standardization of all API responses. By using this package, you can easily manage errors and develop standard API services that automatically provide responses according to HTTP and REST standards. 
+
+This package is usable anywhere, from validators to controllers and other components, and automatically provides features such as request status, message, errors, and execution time. Additionally, adding custom values to responses or disabling these features is easily achievable.
+
+Using this package guarantees the standardization of API responses, meaning you can continuously and reliably provide high-quality responses that are easily understandable and usable for consumers of your API, while also being fully compliant with standards. All done automatically.</div>
 
 ## Installation
 To install Laravel Missed API Response Wrapper, just run the following command:
