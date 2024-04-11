@@ -1,14 +1,16 @@
 <div align="center" style="text-align: center">
 
 # Laravel Missed API Response Wrapper ![GitHub Repo stars](https://img.shields.io/github/stars/negartarh/apiwrapper)
+### Super Fast | Lightweight | Standard | Octane Compatible | High Customizable
 
 </div>
+
 <div align="center" style="text-align: center">
 
-![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge)
-![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge)
-![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%23F44336)
-![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%2300BCD4)
+![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge&color=%238BC34A)
+![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
+![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
+![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
 
 </div>
 
@@ -21,15 +23,11 @@
 
 </div>
 
-<div align="center" style="text-align: center">
 
-### Super Fast | Lightweight | Standard | Octane Compatible | High Customizable
-
-</div>
 
 ## Introduction
 
-The Laravel Missed API Response Wrapper package is a high-quality and standard package that makes the process of creating and managing standard API responses in Laravel easy. This package is both fast and lightweight, and fully compatible with Laravel Octane, highly customizable, and automatically enables the standardization of all API responses. By using this package, you can easily manage errors and develop standard API services that automatically provide responses according to HTTP and REST standards. 
+The **Laravel Missed API Response Wrapper** package is a high-quality and standard package that makes the process of creating and managing standard API responses in Laravel easy. This package is both fast and lightweight, and fully compatible with Laravel Octane, highly customizable, and automatically enables the standardization of all API responses. By using this package, you can easily manage errors and develop standard API services that automatically provide responses according to HTTP and REST standards. 
 
 This package is usable anywhere, from validators to controllers and other components, and automatically provides features such as request status, message, errors, and execution time. Additionally, adding custom values to responses or disabling these features is easily achievable.
 
