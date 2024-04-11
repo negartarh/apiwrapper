@@ -4,26 +4,27 @@
 ### Super Fast | Lightweight | Standard | Octane Compatible | High Customizable
 
 </div>
-
+<br />
 <div align="center" style="text-align: center">
 
-![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge&color=%238BC34A)
-![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
-![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
-![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%238BC34A)
+![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge&color=%388E3C)
+![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
+![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
+![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
 
 </div>
 
 <div align="center" style="text-align: center">
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/negartarh/apiwrapper?style=for-the-badge)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/negartarh/apiwrapper?style=for-the-badge)
-![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/negartarh/apiwrapper?style=for-the-badge)
-![GitHub Discussions](https://img.shields.io/github/discussions/negartarh/apiwrapper?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
+![GitHub Discussions](https://img.shields.io/github/discussions/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
 
 </div>
 
-
+<br />
+<br />
 
 ## Introduction
 
