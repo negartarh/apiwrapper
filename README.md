@@ -513,6 +513,30 @@ async function submitForm() {
     });
 }
 ```
+#### Example 2. Handle 404 status in api responses
+```php
+# app/Exceptions/Handler.php
+
+class Handler extends ExceptionHandler
+{
+    ...
+    
+        public function register()
+        {
+            $this->reportable( function ( Throwable $e ) {
+                //
+            } );
+    
+            $this->renderable(function (NotFoundHttpException $e, Request $request) {
+                if ($request->is('api/*')):
+                    return APIResponse::status(404);
+                endif;
+            });
+    
+        }
+
+```
+
 
 ## Built-in methods
 In the table below, the predefined methods are given with the HTTP code and message text. All these values are accessible and changeable through the config file.
