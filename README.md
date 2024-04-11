@@ -1,4 +1,25 @@
-# Laravel Missed API Response Wrapper
+<div style="text-align: center">
+
+# Laravel Missed API Response Wrapper ![GitHub Repo stars](https://img.shields.io/github/stars/negartarh/apiwrapper)
+
+</div>
+<div style="text-align: center">
+
+![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge)
+![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%23F44336)
+![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%2300BCD4)
+
+</div>
+
+<div style="text-align: center">
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/negartarh/apiwrapper?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/negartarh/apiwrapper?style=for-the-badge)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/negartarh/apiwrapper?style=for-the-badge)
+![GitHub Discussions](https://img.shields.io/github/discussions/negartarh/apiwrapper?style=for-the-badge)
+
+</div>
 
 ### Super fast, lightweight, standard, octane friendly, and high customizable wrapper for Laravel API responses
 Laravel Missed API Response Wrapper is a high-quality package that simplifies the creation and management of Laravel API responses. It is very fast, lightweight, octane-friendly and highly customizable. It allows you to easily classify all your API responses, such as those from validators, controllers, and others, with features like status, message, errors, and execution time, all done automatically. In addition, you can also add your own custom values to it, as easily as possible.
