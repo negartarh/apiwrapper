@@ -12,6 +12,15 @@ return [
     'localization' => true,
 
     /**
+     * Configuration key: sort
+     *
+     * Determines whether to sort the response keys when set to true.
+     *
+     * - If set to true, the response keys will be sorted in a regular order in the API responses.
+     */
+    'sort' => false,
+
+    /**
      * Configuration key: fields
      *
      * The fields array defines which fields should be included or excluded in the API responses

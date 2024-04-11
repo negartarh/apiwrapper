@@ -20,6 +20,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
 ![GitHub Discussions](https://img.shields.io/github/discussions/negartarh/apiwrapper?style=for-the-badge&color=%23303F9F)
+![Languages](https://img.shields.io/badge/04-languages?label=languages&style=for-the-badge&color=%23303F9F)
 
 </div>
 
@@ -384,6 +385,17 @@ return [
     ...
     'localization' => false,
 ```
+## Sorting Responses
+If you wish to further standardize your responses, you can sort them alphabetically. You can achieve this by using the 'sort' key in the configuration file. By setting this key to true, your responses will be sorted alphabetically. The default state of this option is false.
+#### Example 1. Enabling sorting responses
+```php
+# path/to/project/configuration/dir/apiwrapper.php
+
+return [
+    ...
+    'sort' => true,
+```
+
 ## Customizing responses
 To enable, disable or customize default keys in the response, just do it through the configuration file.
 #### Example 1. Disabling default keys

@@ -139,6 +139,10 @@ class APIResponse
 
         endif;
 
+        if(Config::get('apiwrapper.sort')):
+            ksort($wrapped);
+        endif;
+
         return $wrapped;
     }
 
