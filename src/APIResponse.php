@@ -10,7 +10,7 @@ use function request;
 
 class APIResponse
 {
-    const version = '0.0.0';
+    const version = '0.7.3';
 
     public function __call($method, $parameters)
     {
