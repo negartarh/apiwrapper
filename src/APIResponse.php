@@ -2,7 +2,6 @@
 
 namespace Negartarh\APIWrapper;
 
-use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
@@ -10,7 +9,7 @@ use function request;
 
 class APIResponse
 {
-    const version = '0.7.3';
+    const version = '0.7.4';
 
     public function __call($method, $parameters)
     {
@@ -63,11 +62,7 @@ class APIResponse
                 'X-WRAPPED-BY' => sprintf('%s/%s', basename(self::class), self::version),
             ], $headers));
 
-        if ($status >= 200 && $status < 400):
-            return $response;
-        else:
-            return throw new HttpResponseException($response);
-        endif;
+        return $response;
     }
 
     public function wrap(mixed $content = '', int $status = 200, string $message = ''): array
@@ -163,7 +158,6 @@ class APIResponse
         endforeach;
 
         trigger_error(sprintf('Call to undefined HTTP status [%d]. make sure status code exists in Negartarh\APIWrapper\APIResponse configuration file.', $status), E_USER_ERROR);
-
     }
 
 }
