@@ -55,14 +55,12 @@ class APIResponse
 
     public function make(int $status = 200, mixed $content = '', string $message = '', array $headers = []): \Illuminate\Http\Response
     {
-        $response = Response::make(
+        return Response::make(
             $this->wrap($content, $status, $message),
             $status,
             array_merge([
                 'X-WRAPPED-BY' => sprintf('%s/%s', basename(self::class), self::version),
             ], $headers));
-
-        return $response;
     }
 
     public function wrap(mixed $content = '', int $status = 200, string $message = ''): array
