@@ -525,47 +525,29 @@ async function submitForm() {
     });
 }
 ```
+#### Example 2. Handle 404 status in api responses
+```php
+# app/Exceptions/Handler.php
 
-[//]: # (#### Example 2. Handle 404 status in api responses)
+class Handler extends ExceptionHandler
+{
+    ...
+    
+        public function register()
+        {
+            $this->reportable( function ( Throwable $e ) {
+                //
+            } );
+    
+            $this->renderable(function (NotFoundHttpException $e, Request $request) {
+                if ($request->is('api/*')):
+                    return APIResponse::status(404);
+                endif;
+            });
+    
+        }
 
-[//]: # (```php)
-
-[//]: # (# app/Exceptions/Handler.php)
-
-[//]: # ()
-[//]: # (class Handler extends ExceptionHandler)
-
-[//]: # ({)
-
-[//]: # (    ...)
-
-[//]: # (    )
-[//]: # (        public function register&#40;&#41;)
-
-[//]: # (        {)
-
-[//]: # (            $this->reportable&#40; function &#40; Throwable $e &#41; {)
-
-[//]: # (                //)
-
-[//]: # (            } &#41;;)
-
-[//]: # (    )
-[//]: # (            $this->renderable&#40;function &#40;NotFoundHttpException $e, Request $request&#41; {)
-
-[//]: # (                if &#40;$request->is&#40;'api/*'&#41;&#41;:)
-
-[//]: # (                    return APIResponse::status&#40;404&#41;;)
-
-[//]: # (                endif;)
-
-[//]: # (            }&#41;;)
-
-[//]: # (    )
-[//]: # (        })
-
-[//]: # ()
-[//]: # (```)
+```
 
 
 ## Built-in methods
