@@ -2,6 +2,7 @@
 
 namespace Negartarh\APIWrapper;
 
+use HttpResponseException;
 use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
@@ -9,7 +10,7 @@ use function request;
 
 class APIResponse
 {
-    const version = '0.7.4';
+    const version = '0.7.5';
 
     public function __call($method, $parameters)
     {
@@ -55,12 +56,18 @@ class APIResponse
 
     public function make(int $status = 200, mixed $content = '', string $message = '', array $headers = []): \Illuminate\Http\Response
     {
-        return Response::make(
+        $response = Response::make(
             $this->wrap($content, $status, $message),
             $status,
             array_merge([
                 'X-WRAPPED-BY' => sprintf('%s/%s', basename(self::class), self::version),
             ], $headers));
+
+        if ($status >= 200 && $status < 400):
+            return $response;
+        else:
+            return throw new HttpResponseException($response);
+        endif;
     }
 
     public function wrap(mixed $content = '', int $status = 200, string $message = ''): array
