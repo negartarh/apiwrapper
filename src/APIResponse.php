@@ -2,15 +2,14 @@
 
 namespace Negartarh\APIWrapper;
 
-use HttpResponseException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Response;
-use function request;
 
 class APIResponse
 {
-    const version = '0.7.5';
+    const version = '0.7.6';
 
     public function __call($method, $parameters)
     {
