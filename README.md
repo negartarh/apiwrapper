@@ -1,8 +1,8 @@
 <div align="center" style="text-align: center">
 
 # Laravel Missed API Response Wrapper ![GitHub Repo stars](https://img.shields.io/github/stars/negartarh/apiwrapper)
-### Super Fast | Lightweight | Standard | Octane Compatible | High Customizable
-##### Built for Applications Ranging from Small to Large Scale
+### Super Fast | Light Weight | Standard | Octane Compatible | High Customizable
+###### Built for Applications Ranging from Small to Large Scale
 </div>
 <br />
 <div align="center" style="text-align: center">
