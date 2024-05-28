@@ -9,6 +9,7 @@
 
 ![Static Badge](https://img.shields.io/badge/passing-tests?label=tests&style=for-the-badge&color=%388E3C)
 ![Static Badge](https://img.shields.io/badge/passing-tests?label=PHP%20Composer&style=for-the-badge&color=%388E3C)
+![Static Badge](https://img.shields.io/badge/passing-tests?label=Codacy%Security%20Scan&style=for-the-badge&color=%388E3C)
 ![GitHub License](https://img.shields.io/github/license/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
 ![GitHub Release](https://img.shields.io/github/v/release/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/negartarh/apiwrapper?style=for-the-badge&color=%388E3C)
