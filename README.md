@@ -419,6 +419,10 @@ return [
     'fields' => [
         ...
         'version' => fn(mixed $content, int $status, string $message) => env('API_VERSION', 'x.x.x'),
+        or
+        'version' => 'Namespace\Of\Custom\Class::static_method', //recommended
+        or
+        'version' => 'any_callable_function',
 ```
 You can get more information on this by studying the configuration file.
 
@@ -463,7 +467,12 @@ return [
     ...
     'custom_keys'=>[
         'app'=> 'My Wonderful APP',
+        ...
         'time'=> fn(mixed $content, int $status, string $message) => \Illuminate\Support\Carbon::now(),
+        or
+        'time' => 'Namespace\Of\Custom\Class::static_method', //recommended
+        or
+        'time' => 'any_callable_function',
 ```
 and the result:
 ```json
