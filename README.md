@@ -50,7 +50,7 @@ php artisan vendor:publish --provider="Negartarh\APIWrapper\APIResponseServicePr
 This will publish the `apiwrapper.php` configuration file to your config directory and publish localization files to your `languages/vendor/apiwrapper` directory.
 
 ## Basic usage
-There are two ways of utilizing the package: using the facade, or using the helper functions. On either way you will get the same result, it is totally up to you.
+There are two ways of utilizing the package: using the facade, or using the helper functions. Either way you will get the same result, it is totally up to you.
 
 ### Facade
 #### Example 1.
@@ -251,7 +251,7 @@ and the result is:
   "version": "3.2.0"
 }
 ```
-Wait a moment, is not better to customizing the output message? So pay attention to the following example:
+Wait a moment, isn't it better to customize the output message? So pay attention to the following example:
 
 ### Customized messages
 #### Example 1.
