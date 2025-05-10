@@ -25,7 +25,7 @@ class APIResponse
 	 *
 	 * @var string
 	 */
-	public const version = '0.8.0';
+	public const version = '0.9.0';
 	
 	/**
 	 * Handle dynamic method calls to create API responses.
