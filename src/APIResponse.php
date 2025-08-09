@@ -204,7 +204,18 @@ class APIResponse
 			endforeach;
 		
 		endif;
-		
+		$limit     = response()?->headers->get('X-RateLimit-Limit');
+		$remaining = response()?->headers->get('X-RateLimit-Remaining');
+		$retry     = response()?->headers->get('Retry-After');
+
+		if (!is_null($limit) && !is_null($remaining)) {
+		    $wrapped['rateLimit'] = [
+			'limit'     => (int) $limit,
+			'remaining' => (int) $remaining,
+			'reset'     => now()->addSeconds((int) $retry)->toIso8601String()
+		    ];
+		}
+
 		if (Config::get('apiwrapper.sort')):
 			ksort($wrapped);
 		endif;
