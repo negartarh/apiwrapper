@@ -1,21 +1,22 @@
 <?php
 
 use Negartarh\APIWrapper\Facades\APIResponse;
+use Negartarh\APIWrapper\Exceptions\UndefinedMethodException;
 
 /**
  * Test that an exception is thrown for a non-existent method.
  *
  * This test verifies that calling a method that is not defined in the
- * APIResponse configuration throws an ErrorException.
+ * APIResponse configuration throws an UndefinedMethodException.
  *
  * @return void
  *
- * @throws ErrorException If the method does not exist in the configuration.
+ * @throws UndefinedMethodException If the method does not exist in the configuration.
  */
-test('throws exception for none existent method', static function(): void {
+test('throws exception for none existent method', function(): void {
 	APIResponse::nothing([]);
 })
-	->throws(ErrorException::class);
+	->throws(UndefinedMethodException::class);
 
 /**
  * Test that the ok() method returns default data.
@@ -27,7 +28,7 @@ test('throws exception for none existent method', static function(): void {
  *
  * @return void
  */
-test('ok() returns default data', static function(): void {
+test('ok() returns default data', function(): void {
 	
 	$response = APIResponse::ok([]);
 	
@@ -51,7 +52,7 @@ test('ok() returns default data', static function(): void {
  *
  * @return void
  */
-test('ok() returns expected data', static function(): void {
+test('ok() returns expected data', function(): void {
 	
 	$data = [
 		'name'  => fake()->name(),
